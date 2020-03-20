@@ -7,13 +7,26 @@
 </head>
 <body>
     <textarea name="" id="post_content" cols="30" rows="10"></textarea>
-    <script src="/mce/mce.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="mce/mce.js"></script>
+    <div id="modal" class="modal modalNone">
+        <dialog id="dialog">
+           
+
+        </dialog>
+    </div>
+    <script src="jq.js"></script>
+    <script> 
+        $(document).ready(function(){
+          $("#dialog").load("cool.html"); 
+        });
+        </script> 
     <script>
         mceEditor.init({
             selector: 'post_content',
     
 
         })
-    </script>
+     </script>
 </body>
 </html>

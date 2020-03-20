@@ -1,0 +1,30 @@
+.mceEditorFieldContainer{
+    z-index: 0;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.modal{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color:rgba(110, 110, 110, 0.5);
+}
+.modalNone{
+    display: none;
+}
+.modal #dialog {
+    margin: 25% 5% ;
+    width: 90vw;
+    height: 45vw;
+    display: flex;
+    flex-direction: column;
+  }

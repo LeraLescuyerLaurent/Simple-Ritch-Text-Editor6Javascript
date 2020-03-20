@@ -80,28 +80,29 @@ const mceEditor = new (function () {
                 let showCode= false;
                 let isPrompt = false;
 
-                element.onclick = function (e) {
-                    e.preventDefault();
-                    let  command = this.getAttribute('title');
-                    if (command == 'viewSourceCode') {
-                        showCode = execViewSourceCommand(element, contentEditable, showCode);
-                    }else{
-                        switch (command){
-                            case 'insertImage':
-
-                                argument = prompt('enter your url');
-                                isPrompt = true;
-                                break;
-                            case 'createLink':
-                                argument = prompt('enter ypur link');
-                                isPrompt = true;
-                                break;
+                    element.onclick = function (e) {
+                        e.preventDefault();
+                        let  command = this.getAttribute('title');
+                        if (command == 'viewSourceCode') {
+                            showCode = execViewSourceCommand(element, contentEditable, showCode);
+                        }else{
+                            switch (command){
+                                case 'insertImage':
+                                    var element = document.getElementById("modal");
+                                    element.classList.remove("modalNone");
+                                    // argument = prompt('enter your url');
+                                    // isPrompt = true;
+                                    break;
+                                case 'createLink':
+                                    argument = prompt('enter ypur link');
+                                    isPrompt = true;
+                                    break;
+                            }
+                            // if ((argument !== null && isPrompt) || !isPrompt) {
+                                // mceEditorField.document.execCommand(command, false, argument);
+                            }
                         }
-                        if ((argument !== null && isPrompt) || !isPrompt) {
-                            mceEditorField.document.execCommand(command, false, argument);
-                        }
-                    }
-                };
+                    };
             }else{ 
                 // ci c'est pas un button
                 if (isThisElement(defaultElements[el], 'formatBlock')) {
