@@ -1,1 +1,2 @@
-# Simple-Ritch-Text-Editor6Javascript
+# Simple-Ritch-Text-Editor-Javascript
+cool la vie
