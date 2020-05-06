@@ -2,7 +2,7 @@ const mceEditor = new (function () {
     const self = this;
 
     self.init = function (args) {
-
+        document.execCommand("defaultParagraphSeparator", false, "p");
         loadIcons();
 
 
@@ -10,7 +10,8 @@ const mceEditor = new (function () {
         document.getElementById(args.selector).style.display ='none';
 
         const defaultElements = [
-            {command: 'formatBlock', type: 'select', innerHTML: '',options: ['H2', 'H3', 'H4', 'P'] },
+            {command: 'formatBlock', type: 'select', innerHTML: '',options: ['H2', 'H3', 'H4'] },
+            {command: 'defaultParagraphSeparator', type: 'button', innerHtml: '<i class="fas fa-bold"></i>' },
             {command: 'bold', type: 'button', innerHtml: '<i class="fas fa-bold"></i>' },
             {command: 'italic', type: 'button', innerHtml: '<i class="fas fa-italic"></i>' },
             {command: 'underLine', type: 'button', innerHtml: '<i class="fas fa-underline"></i>' },
@@ -90,6 +91,7 @@ const mceEditor = new (function () {
                                 case 'insertImage':
                                     var element = document.getElementById("modal");
                                     element.classList.remove("modalNone");
+                                 
                                     // argument = prompt('enter your url');
                                     // isPrompt = true;
                                     break;
@@ -100,7 +102,7 @@ const mceEditor = new (function () {
                             }
                             // if ((argument !== null && isPrompt) || !isPrompt) {
                                 // mceEditorField.document.execCommand(command, false, argument);
-                            }
+                            // }
                         }
                     };
             }else{ 
